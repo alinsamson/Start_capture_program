@@ -1,0 +1,9 @@
+Salutare,
+Acesta este un mic indrumar de utilizare a aplicatie.
+Aplicatia se va lansa din "aplicatie_tkinter".
+Fotografia "background.png" va rog sa nu o stergeti deoarece este necesara pentru
+aplicatie, fiind background-ul "meniului principal".
+
+Va multumesc pentru intelegere.
+
+		Ionut-Alin Samson

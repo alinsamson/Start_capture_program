@@ -1,0 +1,45 @@
+Creati o aplicatie tkinter care sa aiba urmatoarele functionalitati:
+
+(40p) 1. Un buton de pornire a unei capturi pe toate interfetele de retea. 
+
+Optional pentru utilizator, poate defini un filtru intr-un widget de tip Entry care sa fie aplicat in momentul in care se porneste captura.
+
+(Nota: chiar daca este optional pentru utilizator, aplicatia trebuie sa contina acest Entry)
+
+Captura trebuie sa fie o clasa de tip Singleton care sa se asigure ca o singura instanta a unei capturi se face la un moment dat.
+
+Pentru efectuarea unei capturi se va defini o metoda specifica in clasa Captura.
+
+
+(40p) 2. Un buton de "Save as JSON" care sa salveze pachetele capturate intr-un fisier JSON a carui cale este data intr-un widget de tip Entry
+
+Pentru salvarea in format JSON se va defini o noua clasa Pachet care va avea urmatoarele atribute (denumite cum doriti, exemplul este orientativ):
+
+Ethernet_dst, Ethernet_src, IP_dst, IP_src, IP_version, IP_proto, TCP_sport, TCP_dport, UDP_sport, UDP_dport
+
+In clasa Pachet trebuie suprascrisa metoda __str__ astfel incat aceasta sa returneze un JSON cu toate aceste atribute 
+sub aceasta forma care sa contina valorile atributelor pentru fiecare cheie a JSON-ului:
+
+{‘Ethernet’: {src: ‘ ‘,
+			dst: ‘ ‘,
+			}
+ ‘IP’: {src: ‘ ‘,
+	   dst: ‘ ‘,
+	   version: ‘ ‘
+	 }
+...
+}
+
+In clasa Captura, se va defini o noua metoda pentru salvarea ca JSON astfel:
+
+- pentru fiecare pachet din captura, se va instantia un nou obiect de tip Pachet cu atributele specifice (doar pachetele TCP/UDP)
+- pentru fiecare obiect de tip Pachet se va folosi metoda str(<obiect_pachet>) pentru a se adauga reprezentarea sa sub forma de JSON in JSON-ul final (cel ce va fi scris in fisier)
+- la final, metoda va scrie JSON-ul ce contine toate pachetele in fisierul a carui cale este data in widget-ul Entry
+
+
+(20p) 3. Un buton de "Show statistics" care sa afiseze un chart de tip Pie Chart (diagrama circulara) cu statistici legate de pachetele capturate: nr pachete de tip TCP, nr. pachete de tip UDP. 
+Diagrama rezultata va afisa cat % din pachete sunt pachete TCP si cat % din pachete sunt de tip UDP
+
+
+Se va acorda 10p "din oficiu" daca se respecta best practice-urile discutate pe parcursul cursurilor
+
